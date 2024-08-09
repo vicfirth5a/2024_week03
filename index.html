@@ -36,11 +36,21 @@
             alt="logo"
         /></a>
 
-        <nav class="menu">
-          <a href="#" class="menu-item">系列鏡框</a>
-          <a href="#" class="menu-item">門市據點</a>
-          <a href="#" class="menu-item">部落格</a>
-          <a href="#" class="menu-item">常見問題</a>
+        <nav>
+          <ul class="menu">
+            <li class="menu-item">
+              <a href="#">系列鏡框</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">門市據點</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">部落格</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">常見問題</a>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>
@@ -50,7 +60,7 @@
       <div class="container">
         <div class="hero-txt">
           <p>Promise-Desert 2020 早春系列</p>
-          <h2>看得清，才能看得遠</h2>
+          <h1>看得清，才能看得遠</h1>
           <a href="#" class="btn">立即購買</a>
         </div>
       </div>
@@ -258,20 +268,34 @@
 
         <form class="form">
           <div class="txt-item">
-            <p>姓名</p>
-            <input type="text" name="" id="" placeholder="陳小明" />
+            <label for="name">姓名</label>
+            <input type="text" name="" id="name" placeholder="陳小明" />
           </div>
           <div class="txt-item">
-            <p>聯絡電話</p>
-            <input type="tel" name="" id="" placeholder="0912-345-678" />
+            <label for="telephone">聯絡電話</label>
+            <input
+              type="tel"
+              name=""
+              id="telephone"
+              placeholder="0912-345-678"
+            />
           </div>
           <div class="txt-item">
-            <p>電子郵件</p>
-            <input type="email" name="" id="" placeholder="example@email.com" />
+            <label for="email">電子郵件</label>
+            <input
+              type="email"
+              name=""
+              id="email"
+              placeholder="example@email.com"
+            />
           </div>
           <div class="txt-item">
-            <p>意見反應</p>
-            <textarea name="" id="" placeholder="請輸入您的意見"></textarea>
+            <label for="opinion">意見反應</label>
+            <textarea
+              name=""
+              id="opinion"
+              placeholder="請輸入您的意見"
+            ></textarea>
           </div>
           <div class="private-policy">
             <input type="checkbox" name="" id="checkbox" />

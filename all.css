@@ -16,18 +16,18 @@ body {
   line-height: 1.5;
 }
 .container {
-  width: 67.5%;
+  max-width: 1296px;
   margin: auto;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .container {
-    width: 90.625%;
+    max-width: 696px;
     margin: auto;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 576px) {
   .container {
-    width: 100%;
+    max-width: 348px;
     /* padding: 0 15px; */
   }
 }
@@ -47,6 +47,10 @@ body {
   text-decoration: none;
   color: var(--text-color-white);
   font-size: 20px;
+  transition: 0.3s;
+}
+.header a:hover {
+  color: #000;
 }
 .header .logo {
   width: 80px;
@@ -57,23 +61,26 @@ body {
 .header .menu {
   display: flex;
 }
-.header .menu :not(a:last-child) {
+.header .menu > :not(li:last-child) {
   margin-right: 64px;
 }
-@media (max-width: 375px) {
+@media (max-width: 767px) {
   .header {
     /* padding: 0; */
     padding-bottom: 0;
   }
   .header .container {
+    max-width: 100%;
     flex-wrap: wrap;
   }
   .header .logo {
     margin-left: 12px;
   }
-  .header .menu {
+  .header nav {
     /* flex-basis: 100%; */
     width: 100%;
+  }
+  .header .menu {
     flex-wrap: wrap;
   }
   .header .menu .menu-item {
@@ -93,10 +100,10 @@ body {
 .section-hero {
   background: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/home-header.png?raw=true)
     center/ cover;
-  height: 787px;
+  /* height: 787px; */
 }
 .section-hero .container {
-  height: 100%;
+  min-height: 787px;
 
   display: flex;
   justify-content: end;
@@ -109,13 +116,14 @@ body {
   color: var(--text-color-dark);
   font-size: 36px;
 }
-.section-hero .hero-txt h2 {
+.section-hero .hero-txt h1 {
   color: var(--text-color-dark);
   font-size: 64px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 .section-hero .hero-txt .btn {
+  display: inline-block;
   text-decoration: none;
   background-color: var(--bg-color-red);
   color: var(--text-color-white);
@@ -127,17 +135,18 @@ body {
   color: var(--bg-color-red);
   background-color: var(--text-color-white);
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .section-hero {
     background: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/home-header-sm.png?raw=true)
       center/ cover;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 767px) {
   .section-hero {
-    height: 396px;
+    /* height: 396px; */
   }
   .section-hero .container {
+    min-height: 396px;
     padding: 0 14px;
   }
   .section-hero .hero-txt p {
@@ -187,7 +196,7 @@ body {
   width: 100%;
   vertical-align: top;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .section-feature-list .feature-list {
     flex-wrap: wrap;
   }
@@ -195,7 +204,7 @@ body {
     width: calc(50% - 12px);
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 767px) {
   .section-feature-list .container {
     padding: 0 14px;
   }
@@ -248,7 +257,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .section-classic-products .classic-products-list {
     flex-direction: column;
     align-items: center;
@@ -264,7 +273,7 @@ body {
     margin-bottom: 24px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 767px) {
   .section-classic-products .container {
     padding: 0 14px;
   }
@@ -322,7 +331,7 @@ body {
   font-weight: 900;
   text-align: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .section-co-branding {
     background: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/index-bg-md.png?raw=true)
       0% 0% / cover;
@@ -336,7 +345,7 @@ body {
     /* margin-bottom: 24px; */
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 767px) {
   .section-co-branding {
     background: url(https://github.com/hexschool/2022-web-layout-training/blob/main/week3-4/index-bg-sm.png?raw=true)
       center / cover;
@@ -380,7 +389,6 @@ body {
 }
 .section-testimonial .testimonial-item .txt {
   padding: 16px;
-  flex-grow: 1;
 
   min-height: 205px;
   display: flex;
@@ -392,7 +400,7 @@ body {
   font-size: 14px;
   color: #707070;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .section-testimonial .testimonial-list {
     flex-wrap: wrap;
   }
@@ -400,7 +408,7 @@ body {
     width: calc(50% - 12px);
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 576px) {
   .section-testimonial {
     padding: 40px 14px;
   }
@@ -422,7 +430,12 @@ body {
   padding: 80px 0;
 }
 .section-contact .container {
-  width: 33.125%;
+  max-width: 636px;
+}
+.section-contact input,
+.section-contact textarea {
+  background-color: transparent;
+  border: 1px solid #000;
 }
 .section-contact h2 {
   color: var(--text-color-dark);
@@ -469,7 +482,8 @@ body {
   display: block;
   background-color: var(--bg-color-red);
   color: var(--text-color-white);
-  padding: 16px 176px;
+  padding: 16px 0;
+  width: 100%;
   max-width: 416px;
   margin: auto;
   border: none;
@@ -479,12 +493,12 @@ body {
 .section-contact .submit:hover {
   background-color: #707070;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .section-contact {
     padding: 80px 60px;
   }
   .section-contact .container {
-    width: 90.625%;
+    width: 624px;
     margin: auto;
     /* padding: 0 60px; */
   }
@@ -495,11 +509,10 @@ body {
     font-size: 16px;
   }
   .section-contact .submit {
-    padding: 16px 136px;
     max-width: 336px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 767px) {
   .section-contact {
     padding: 40px 14px;
   }
@@ -513,7 +526,6 @@ body {
     font-size: 24px;
   }
   .section-contact .submit {
-    padding: 16px 142px;
     max-width: 348px;
   }
 }
@@ -553,9 +565,6 @@ body {
   color: #fff;
   display: inline-block;
   font-size: 36px;
-
-  /* width: 36px;
-  height: 36px; */
 }
 .footer .contact {
   padding-bottom: 32px;
@@ -590,7 +599,13 @@ body {
   font-size: 14px;
   color: var(--text-color-white);
 }
-@media (max-width: 768px) {
+.footer a {
+  transition: 0.3s;
+}
+.footer a:hover {
+  color: #000;
+}
+@media (max-width: 992px) {
   .footer .social-media {
     gap: 16px;
   }
@@ -598,7 +613,7 @@ body {
     width: 40px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 767px) {
   .footer {
     padding: 24px 14px;
   }
